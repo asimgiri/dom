@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #eee;
+        }
+
+        h1,
+        p {
+            color: #221E1F;
+        }
+
+        .wrapper {
+            width: 80%;
+            text-align: center;
+            margin: auto;
+            border: 1px solid #ccc;
+        }
+
+        header {
+            background: #fff;
+            height: 40px;
+            margin: auto;
+            color: #fff;
+        }
+
+        header .lst {
+            list-style-type: none;
+            float: right;
+            padding-top: 10px;
+        }
+
+        header .lst li {
+            display: inline;
+            padding: 13px 25.3px;
+            transition: .3s ease-out;
+        }
+
+        header .lst li:hover {
+            background: rgba(0, 123, 255, .2);
+            cursor: pointer;
+        }
+
+        header .lst li a {
+            text-decoration: none;
+            color: #444;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .slider {
+            /* background: rgba(0, 123, 255, .3); */
+            background: #fff;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            height: 300px;
+        }
+
+        section button {
+            margin-top: 20px;
+        }
+
+        section {
+            border-bottom: 1px solid #ccc;
+            transition: .5s ease-out;
+        }
+
+        .slider img {
+            margin-top: 60px;
+        }
+
+        .about {
+            background: #fff;
+            text-align: justify;
+            padding: 20px;
+        }
+
+        .about p {
+            margin-top: 10px;
+        }
+
+        footer {
+            background: #221E1F;
+            padding: 20px 0px 140px;
+        }
+
+        footer .col {
+            width: 25%;
+            float: left;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        footer .col ul {
+            list-style-type: none;
+        }
+
+        footer .col ul li {
+            margin-top: 10px;
+        }
+
+        footer .col ul li a {
+            text-decoration: none;
+            color: #888;
+        }
+
+        footer .col ul li a:hover {
+            color: #fff;
+        }
+
+        .class_one {
+            padding: 50px;
+            background: green;
+        }
+
+        .class_three{
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <ul class="lst">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+
+        <section class="slider">
+            <img src="chimp.png" alt="" width="150px">
+        </section>
+
+        <section class="about" id="sec_one">
+            <h1>This is a title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, minima accusantium. Nostrum debitis
+                eaque nihil sit quidem necessitatibus obcaecati corrupti?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, odit suscipit expedita tempora impedit
+                atque vitae provident earum recusandae placeat perferendis voluptate pariatur repudiandae tempore,
+                maxime quia nam voluptates illum veniam consequatur. Quis minus excepturi at error ratione praesentium!
+                Magnam.</p>
+            <button id="btn">Swap Color</button>
+        </section>
+
+
+        <section class="about" id="sec_two">
+            <h1>This is a title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, minima accusantium. Nostrum debitis
+                eaque nihil sit quidem necessitatibus obcaecati corrupti?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, odit suscipit expedita tempora impedit
+                atque vitae provident earum recusandae placeat perferendis voluptate pariatur repudiandae tempore,
+                maxime.</p>
+            <button onclick="swapColor()">Swap Color</button>
+        </section>
+
+        <section class="about" id="sec_three">
+            <h1>This is a title</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, minima accusantium. Nostrum debitis
+                eaque nihil sit quidem necessitatibus obcaecati corrupti?</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, odit suscipit expedita tempora impedit
+                atque vitae provident earum recusandae placeat perferendis voluptate pariatur repudiandae tempore,
+                maxime.</p>
+            <button id="btn3">Change BG</button>
+        </section>
+
+        <footer>
+            <div class="col">
+                <ul class="lst">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="#">More...</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul class="lst">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="#">More...</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul class="lst">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="#">More...</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <ul class="lst">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Products</a></li>
+                    <li><a href="#">More...</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+    <script>
+
+
+        //TRIGGER FUNCTION FROM JS
+        var swap = document.getElementById('sec_one');
+        var btn = document.getElementById('btn');
+
+        btn.onclick = function () {
+            swap.style.background = 'rgba(0,123,255,.2)';
+        }
+
+        //FUNCTION
+        function swapColor() {
+            var swap = document.getElementById('sec_two').style.background = 'rgba(0,123,255,.6)';
+        }
+
+        // ADD CLASSES
+        swap.onclick = function (event) {
+            swap.classList.add('class_one');
+        }
+
+
+        //TRGGER EVENTS FROM SCRIPT
+        var a = document.getElementById('sec_three');
+        var b = document.querySelector('#sec_three > button')
+
+        btn3.onclick = function (event) {
+            a.classList.add('class_three');
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

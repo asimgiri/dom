@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+    <div id="div_one">
+        <h1>This is first header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vitae harum fuga molestiae debitis
+            necessitatibus consequuntur odit ad provident optio.</p>
+    </div>
+
+    <div id="div_two">
+        <h1>This is second header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vitae harum fuga molestiae debitis
+            necessitatibus consequuntur odit ad provident optio.</p>
+    </div>
+
+    <div id="div_three">
+        <h1>This is third header</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt vitae harum fuga molestiae debitis
+            necessitatibus consequuntur odit ad provident optio.</p>
+    </div>
+
+    
+
+    <script>
+        var first = document.getElementById('div_one').style.background = '#aaa';
+        var first = document.getElementById('div_two').style.background = '#ddd';
+        var first = document.getElementById('div_three').style.background = '#eee';
+    
+        var heading = document.querySelectorAll('h1');
+        heading[0].style = 'color: #333;'
+
+        var para = document.querySelector('#div_two p');
+    
+    </script>
+
+
+</body>
+
+</html>
