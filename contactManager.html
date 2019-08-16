@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Manager</title>
+    <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
+
+    <style>
+        input {
+            margin-top: 10px;
+            padding: 5px;
+            width: 30vw;
+        }
+
+        body {
+            width: 80vw;
+            margin: 0 auto;
+            background: #ededed;
+            text-align: center;
+            font-family: 'Cabin', sans-serif;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .contact-info {
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 2px solid #ccc;
+            padding: 15px 0;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .contact-info img {
+            padding-right: 20px;
+        }
+
+        .phone {
+            font-size: 14px;
+        }
+
+        input[type=search] {
+            font-family: 'Cabin', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="search" placeholder="eg. John Doe">
+
+    <script>
+
+
+
+        class Details {
+            constructor(name, phone, address) {
+                this.name = name,
+                    this.phone = phone,
+                    this.address = address
+            }
+        }
+
+        class Contact {
+            constructor() {
+                this.contactList = []
+            }
+
+            generateContact() {
+
+                // THIS GENEFRATES THE ENTIRE CONTAINER i TIMES
+                // LOOPING THE ENTIRE CONTAINER i TIMES
+
+                for (let i = 0; i < this.contactList.length; i++) {
+                    let containerElem = document.createElement('div');
+                    containerElem.setAttribute('class', 'container');
+
+                    let ulElem = document.createElement('ul');
+                    let liElem = document.createElement('li');
+
+                    let divElem = document.createElement('div');
+                    divElem.setAttribute('class', 'contact-info');
+
+                    let imgdivElem = document.createElement('div');
+                    let imgElem = document.createElement('img');
+                    imgElem.setAttribute('src', 'http://lorempixel.com/100/100');
+
+                    imgdivElem.appendChild(imgElem);
+
+                    let detailsElem = document.createElement('div');
+                    let pElem = document.createElement('p');
+                    let p2Elem = document.createElement('p');
+
+                    let addressElem = document.createElement('address');
+
+                    let nameElem = document.createElement('strong');
+
+                    let phoneElem = document.createElement('strong');
+
+                    addressElem.innerText = `${this.contactList[i].address}`;
+
+                    nameElem.setAttribute('class', 'fullname');
+                    nameElem.innerText = `${this.contactList[i].name}`;
+
+                    phoneElem.setAttribute('class', 'phone');
+                    phoneElem.innerText = `${this.contactList[i].phone}`;
+
+                    pElem.appendChild(nameElem);
+                    p2Elem.appendChild(phoneElem);
+                    detailsElem.appendChild(pElem);
+                    detailsElem.appendChild(p2Elem);
+                    detailsElem.appendChild(addressElem);
+
+                    divElem.appendChild(imgdivElem);
+                    divElem.appendChild(detailsElem);
+
+
+                    liElem.appendChild(divElem);
+                    ulElem.appendChild(liElem);
+                    containerElem.appendChild(ulElem);
+
+                    document.body.appendChild(containerElem);
+                }
+            }
+
+            addContact(name, phone, address) {
+                let d = new Details(name, phone, address)
+                this.contactList.push(d);
+            }
+        }
+
+
+        let contactOne = new Contact();
+        contactOne.addContact('Ram Shrestha', '+977-9841564352', 'Kathmandu, Nepal');
+        contactOne.addContact('Hari Khatri', '+977-9843543425', 'Bhaktapur, Nepal');
+        contactOne.addContact('Gita Pokharel', '+977-9877987634', 'Bhaktapur, Nepal');
+        contactOne.addContact('Rupa Rana', '+977-9851076541', 'Bhaktapur, Nepal');
+
+        contactOne.generateContact();
+
+    </script>
+</body>
+
+</html>
