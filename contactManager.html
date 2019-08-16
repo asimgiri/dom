@@ -59,7 +59,9 @@
 
 <body>
     <input type="search" placeholder="eg. John Doe">
+    <div id="output">
 
+    </div>
     <script>
 
 
@@ -75,14 +77,17 @@
         class Contact {
             constructor() {
                 this.contactList = []
+                this.searchField = ""
             }
 
-            generateContact() {
-
+            generateContact(data) {
+                if(typeof data === "undefined"){
+                    var data = this.contactList;
+                }
                 // THIS GENEFRATES THE ENTIRE CONTAINER i TIMES
                 // LOOPING THE ENTIRE CONTAINER i TIMES
-
-                for (let i = 0; i < this.contactList.length; i++) {
+                document.querySelector("#output").innerHTML = ''
+                for (let i = 0; i < data.length; i++) {
                     let containerElem = document.createElement('div');
                     containerElem.setAttribute('class', 'container');
 
@@ -108,13 +113,13 @@
 
                     let phoneElem = document.createElement('strong');
 
-                    addressElem.innerText = `${this.contactList[i].address}`;
+                    addressElem.innerText = `${data[i].address}`;
 
                     nameElem.setAttribute('class', 'fullname');
-                    nameElem.innerText = `${this.contactList[i].name}`;
+                    nameElem.innerText = `${data[i].name}`;
 
                     phoneElem.setAttribute('class', 'phone');
-                    phoneElem.innerText = `${this.contactList[i].phone}`;
+                    phoneElem.innerText = `${data[i].phone}`;
 
                     pElem.appendChild(nameElem);
                     p2Elem.appendChild(phoneElem);
@@ -129,14 +134,26 @@
                     liElem.appendChild(divElem);
                     ulElem.appendChild(liElem);
                     containerElem.appendChild(ulElem);
-
-                    document.body.appendChild(containerElem);
+                    document.querySelector("#output").appendChild(containerElem);
                 }
             }
 
             addContact(name, phone, address) {
                 let d = new Details(name, phone, address)
                 this.contactList.push(d);
+            }
+
+            addSearch(name){
+                this.searchField = name;
+                return this;
+            }
+
+            generateSearchData(){
+                var data =  this.contactList.filter((value,index)=>{
+                    // debugger;
+                    return value.name.includes(this.searchField) || value.address.includes(this.searchField)
+                })
+                this.generateContact(data)
             }
         }
 
